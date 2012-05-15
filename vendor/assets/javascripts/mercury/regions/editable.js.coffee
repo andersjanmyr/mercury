@@ -505,14 +505,14 @@ class Mercury.Regions.Editable.Selection
 
     if @range
       if @commonAncestor(true).closest('.mercury-snippet').length
-        lastChild = @context.createTextNode('\00')
+        lastChild = @context.createTextNode('\x0')
         element.appendChild(lastChild)
     else
       if element.lastChild && element.lastChild.nodeType == 3 && element.lastChild.textContent.replace(/^[\s+|\n+]|[\s+|\n+]$/, '') == ''
         lastChild = element.lastChild
-        element.lastChild.textContent = '\00'
+        element.lastChild.textContent = '\x0'
       else
-        lastChild = @context.createTextNode('\00')
+        lastChild = @context.createTextNode('\x0')
         element.appendChild(lastChild)
 
     if lastChild
